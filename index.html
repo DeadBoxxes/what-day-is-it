@@ -7,8 +7,21 @@
  <h1>
   What day is it?
  </h1>
- <?php echo date("l j F Y ") . "<br>";?> <br>
+ <div class="clock"></div>
  <li><a href="https://github.com/DeadBoxxes">Github</a></li>
  <li><a href="/what-day-is-it/nothing.html">nothing</a></li><br>
  check out more of "my stuff" if you so desire, but try not to get your hopes up! (its quite boring)...
+
+ <script>
+  function clock() { 
+   let time = new Date(); 
+   let clock = document.querySelector('.clock'); 
+   let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'Octobre', 'November', 'December'];
+   let text = `${months[time.getMonth()]} ${time.getDate()}, ${time.getFullYear()}`; 
+   clock.textContent = text; 
+   setTimeout(clock, 60000); 
+  }
+  clock();
+ </script>
+  
 </body>
